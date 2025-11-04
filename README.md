@@ -47,7 +47,6 @@ This creates tables and inserts a sample Trip/LogDay so the UI can render an ELD
 Open:
 
 - API health: http://localhost:8000/health
-- API docs: http://localhost:8000/api/docs/
 
 #### Key files
 
@@ -77,4 +76,4 @@ Open:
 - Local/dev works without Docker using SQLite.
 - To deploy on Render, see repo root `README.md` (Render section) and use `render.yaml`.
 
-For full repo setup and the frontend, see the root `README.md`.
+For the deployed API, see: https://eld-backend-n53m.onrender.com/health
