@@ -16,4 +16,5 @@ COPY . /app
 
 ENV DJANGO_SETTINGS_MODULE=api.settings
 
-CMD ["gunicorn", "api.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+# Render sets $PORT dynamically; run migrations then start Gunicorn
+CMD ["bash", "-lc", "python manage.py migrate --noinput && (python manage.py seed_sample || true) && gunicorn api.wsgi:application --bind 0.0.0.0:$PORT --workers 3"]
